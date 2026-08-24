@@ -1,0 +1,23 @@
+# Debian build output
+*.deb
+*.changes
+*.buildinfo
+*.dsc
+*.tar.gz
+*.tar.xz
+*.build
+
+# Debian build artifacts
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/*.postinst.debhelper
+debian/*.postrm.debhelper
+debian/*.substvars
+debian/*.debhelper.log
+debian/hifiberry-shairport/
+
+# Sources fetched by debian/rules during build
+nqptp/
+metadata-reader/
+shairport-sync-*/
