@@ -7,7 +7,7 @@ hifiberry-shairport (1:5.2.3.1) UNRELEASED; urgency=medium
     - Improved handling of different input vs output bit depth, improving
       maximum dynamic range available and minise transcoding inaccuracies.
 
- -- HiFiBerry <hatter@gmail.com>  Mon, 31 Aug 2026 15:42:05 +1000
+ -- Jon Fanti <hatter@gmail.com>  Mon, 31 Aug 2026 15:42:05 +1000
 
 hifiberry-shairport (1:5.2.1.6) stable; urgency=medium
 
