@@ -1,3 +1,23 @@
+hifiberry-shairport (1:5.2.3.2) stable; urgency=medium
+
+  * postinst: stop writing the WebUI descriptor and icon into
+    /etc/hifiberry/players.d. The package ships both under
+    /usr/share/hifiberry/players.d, and configurator lets /etc shadow
+    /usr/share, so the copy written here masked the packaged one on every
+    device and nothing ever read it. The two had drifted: the shipped
+    descriptor carries the airplay_version setting -- AirPlay 2 against
+    legacy AirPlay 1 -- and the /etc copy does not, so that selector has been
+    invisible in the web interface wherever this package is installed. That
+    is the exact symptom the move to /usr/share was made to fix; the
+    descriptor moved, but the postinst kept overwriting it.
+  * postinst: remove the stale /etc copy when upgrading from an affected
+    version, since nothing else will -- rm_conffile dropped the conffile at
+    1:5.2.1.6 and the postinst then recreated it as an untracked file, so
+    dpkg no longer knows about it. A file present on a fresh install is left
+    alone: there it is an administrator's own override.
+
+ -- HiFiBerry <support@hifiberry.com>  Mon, 07 Sep 2026 10:13:06 +0000
+
 hifiberry-shairport (1:5.2.3.1) stable; urgency=medium
 
   * Update shairport-sync to 5.2.3 (was 5.2.1). Changes included:
